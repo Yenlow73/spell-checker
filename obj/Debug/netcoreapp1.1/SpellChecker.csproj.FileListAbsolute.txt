@@ -1,0 +1,8 @@
+c:\Users\wolne\OneDrive\Documentos\VSCode\SpellChecker\bin\Debug\netcoreapp1.1\SpellChecker.deps.json
+c:\Users\wolne\OneDrive\Documentos\VSCode\SpellChecker\bin\Debug\netcoreapp1.1\SpellChecker.runtimeconfig.json
+c:\Users\wolne\OneDrive\Documentos\VSCode\SpellChecker\bin\Debug\netcoreapp1.1\SpellChecker.runtimeconfig.dev.json
+c:\Users\wolne\OneDrive\Documentos\VSCode\SpellChecker\bin\Debug\netcoreapp1.1\SpellChecker.dll
+c:\Users\wolne\OneDrive\Documentos\VSCode\SpellChecker\bin\Debug\netcoreapp1.1\SpellChecker.pdb
+c:\Users\wolne\OneDrive\Documentos\VSCode\SpellChecker\obj\Debug\netcoreapp1.1\SpellChecker.AssemblyInfo.cs
+c:\Users\wolne\OneDrive\Documentos\VSCode\SpellChecker\obj\Debug\netcoreapp1.1\SpellChecker.dll
+c:\Users\wolne\OneDrive\Documentos\VSCode\SpellChecker\obj\Debug\netcoreapp1.1\SpellChecker.pdb
