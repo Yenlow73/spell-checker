@@ -26,19 +26,21 @@ namespace SpellChecker
         static void process_document(Dictionary main_dict, Dictionary ignored) 
         {        
             Word current_word = new Word("");
-            StreamReader in_doc = main_dict.sr;
-            StreamWriter out_doc = main_dict.sw;
-
-            while(Word.get_word(in_doc, out_doc, current_word) != null)
+            StreamReader in_doc = new StreamReader(new FileStream("apolo11.txt", FileMode.Open, FileAccess.Read));
+            StreamWriter out_doc = new StreamWriter(new FileStream("apolo11c.txt", FileMode.Create, FileAccess.Write));
+            
+            while(current_word != null)
             {
-                
+                current_word = Word.get_word(in_doc, out_doc);
+
                 if (!main_dict.contains(current_word) && !ignored.contains(current_word))
                 {
                     consult_user(current_word, main_dict, ignored);
                 }
                 
                 Word.put_word(out_doc, current_word);
-            }
+            } 
+
         }
         static void Main(string[] args)
         {          

@@ -3,23 +3,25 @@ using System.IO;
 
 namespace SpellChecker
 {
-    // Each Dictionary object is a set of words that can be loaded and saved.
+    /// Each Dictionary object is a set of words that can be loaded and saved.
     class Dictionary : Word_Set
     {
         public StreamReader sr;
         public StreamWriter sw;
-        // Construct an empty dictionary.
+        /// Construct an empty dictionary.
         public Dictionary() : base()
         {
             
         }
-        // Load this dictionary from filestream
+        /// Load this dictionary from filestream
         public void load(Stream filestream)
         {
             try
             {
-                // Create an instance of StreamReader to read from a file.
-                // The using statement also closes the StreamReader.
+                /*
+                    Create an instance of StreamReader to read from a file.
+                    The using statement also closes the StreamReader.
+                */
                 using (sr = new StreamReader(filestream))
                 {
                     string line;
@@ -41,7 +43,7 @@ namespace SpellChecker
             }
         }
         
-        // Save this dictionary to filestream
+        /// Save this dictionary to filestream.
         public void save(Stream filestream)
         {
             sw = new StreamWriter(filestream);
