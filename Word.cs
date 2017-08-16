@@ -58,10 +58,12 @@ namespace SpellChecker
 
         public int CompareTo(Word word)
         {       
-            if (word == null){
+            if (word == null)
+            {
                 return 1;  
             }
-            else {
+            else 
+            {
                 return this.spelling.CompareTo(word.spelling);
             }
         }

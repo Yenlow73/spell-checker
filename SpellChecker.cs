@@ -54,17 +54,18 @@ namespace SpellChecker
         static void process_document(Dictionary main_dict, Dictionary ignored) 
         {        
             Word current_word = new Word("");
-            StreamReader in_doc = new StreamReader(new FileStream("apolo11.txt", FileMode.Open, FileAccess.Read));
-            StreamWriter out_doc = new StreamWriter(new FileStream("apolo11c.txt", FileMode.Create, FileAccess.Write));
-            
+            string document = "apolo11.txt";
+            string document2 = "apolo11c.txt";
+            StreamReader in_doc = new StreamReader(new FileStream(document, FileMode.Open, FileAccess.Read));
+            StreamWriter out_doc = new StreamWriter(new FileStream(document2, FileMode.Create, FileAccess.Write));                     
+
+
             while(current_word != null)
             {
                 current_word = Word.get_word(in_doc, out_doc);               
 
                 if(current_word != null)
                 {
-
-                    current_word.spelling = current_word.spelling.ToLower();
 
                     if(!main_dict.contains(current_word) && !ignored.contains(current_word) &&
                         !Word.IsNumeric(current_word))
@@ -87,6 +88,7 @@ namespace SpellChecker
 
             using(FileStream fileStreamRead = new FileStream("main-dict.txt", FileMode.Open, FileAccess.Read))
             {
+                Console.WriteLine("Loading dictionary...");
                 main_dict.load(fileStreamRead);                 
             }
 
@@ -94,8 +96,10 @@ namespace SpellChecker
 
             using(FileStream fileStreamWrite = new FileStream("main-dict.txt", FileMode.Create, FileAccess.Write))
             {
+                Console.WriteLine("Saving dictionary...");
                 main_dict.save(fileStreamWrite);    
             }
+            Console.WriteLine("Done.");
         }
     }
 }
