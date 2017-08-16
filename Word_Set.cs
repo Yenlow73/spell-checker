@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SpellChecker
 {
     class Word_Set
     {
-        List<Word> words;
+        public List<Word> words;
         /// Construct an empty set of words.
         public Word_Set()
         {
@@ -19,7 +20,7 @@ namespace SpellChecker
         /// Return true if and only if wd is a member of this set of words.
         public bool contains(Word wd)
         {
-            return words.Contains(wd);
+            return words.Find(word => (word.spelling == wd.spelling)) != null;
         }    
     }
 }

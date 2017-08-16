@@ -46,7 +46,21 @@ namespace SpellChecker
         /// Save this dictionary to filestream.
         public void save(Stream filestream)
         {
-            sw = new StreamWriter(filestream);
+            try
+            {
+                using (sw = new StreamWriter(filestream))
+                {
+                    base.words.Sort();
+                    foreach(Word word in base.words)
+                    {
+                        sw.WriteLine(word.spelling);
+                    }
+                }
+            }
+            catch (IOException e)
+            {                
+                Console.WriteLine(e.Message);
+            }
         }
         
     }
